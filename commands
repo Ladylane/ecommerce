@@ -1,0 +1,5 @@
+npm install --save @nestjs/typeorm typeorm pg
+
+
+
+https://npm.io/package/nest-knexjs-module
