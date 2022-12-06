@@ -3,7 +3,7 @@ https://docs.nestjs.com/controllers#controllers
 */
 
 import { Controller, Get } from '@nestjs/common';
-import { PurchaseService } from './purchase.service';
+import { PurchaseService } from '../services/purchase.service';
 
 @Controller("/purchases")
 export class PurchaseController {
