@@ -1,7 +1,7 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon';
 
-export class Purchase {
-    id?: number;
-    date: DateTime;
-    totalValue: number;
+export class PurchaseModel {
+  id?: number;
+  date: DateTime;
+  totalValue: number;
 }
