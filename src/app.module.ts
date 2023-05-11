@@ -2,6 +2,8 @@ import { PurchaseModule } from './modules/purchase/purchase.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PurchaseSchema } from './modules/purchase/schemas/purchase.schema';
+import { AuthModule } from './modules/auth/auth.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -13,11 +15,13 @@ import { PurchaseSchema } from './modules/purchase/schemas/purchase.schema';
         username: 'user',
         password: 'user123',
         database: 'ecommerce',
-        synchronize: false,
-        logging: false,
+        synchronize: true,
+        logging: true,
         entities: [PurchaseSchema],
       }),
     }),
+    AuthModule,
+    UsersModule,
   ],
 })
 export class AppModule {}

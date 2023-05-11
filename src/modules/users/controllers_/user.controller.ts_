@@ -1,0 +1,28 @@
+import { Body, Controller, Get, HttpStatus, Post, Res } from '@nestjs/common';
+import { UsersModel } from '../models/users.model.ts_';
+import { UsersService } from '../services/users.service';
+import { Response } from 'express';
+
+@Controller('/users')
+export class UserController {
+  constructor(private usersService: UsersService) {}
+
+  @Post('/add')
+  async addUsers(@Res() res: Response, @Body() data: UsersModel): Promise<any> {
+    const result = await this.usersService.addUsers(data);
+    if (!result || result.length === 0) {
+      res.status(HttpStatus.NO_CONTENT).send();
+    } else {
+      res.status(HttpStatus.OK).send();
+    }
+  }
+
+  @Get()
+  async getAllUsers(@Res() res: Response): Promise<any> {
+    const result = await this.usersService.getAllUsers();
+    if (!result) {
+      res.status(HttpStatus.NO_CONTENT).send();
+    }
+    res.status(HttpStatus.OK).json(result);
+  }
+}

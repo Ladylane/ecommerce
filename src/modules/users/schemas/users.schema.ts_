@@ -1,0 +1,26 @@
+// import { EntitySchema } from 'typeorm';
+// import { UsersModel } from '../models/users.model.ts_';
+
+// export const userSchema = new EntitySchema<UsersModel>({
+//   name: 'UsersModel',
+//   tableName: 'user',
+//   target: UsersModel,
+//   columns: {
+//     id: {
+//       name: 'id',
+//       primary: true,
+//       generated: true,
+//       type: Number,
+//     },
+//     username: {
+//       name: 'username',
+//       type: String,
+//       nullable: false,
+//     },
+//     password: {
+//       name: 'password',
+//       type: String,
+//       nullable: false,
+//     },
+//   },
+// });
